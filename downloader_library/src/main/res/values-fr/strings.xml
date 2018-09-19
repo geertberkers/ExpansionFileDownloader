@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <!-- When a download completes, a notification is displayed, and this
+        string is used to indicate that the download successfully completed.
+        Note that such a download could have been initiated by a variety of
+        applications, including (but not limited to) the browser, an email
+        application, a content marketplace. -->
+    <string name="notification_download_complete">Téléchargement terminé</string>
+
+    <!-- When a download completes, a notification is displayed, and this
+        string is used to indicate that the download failed.
+        Note that such a download could have been initiated by a variety of
+        applications, including (but not limited to) the browser, an email
+        application, a content marketplace. -->
+    <string name="notification_download_failed">Téléchargement réussi</string>
+
+    <string name="state_unknown">État inconnu</string>
+    <string name="state_idle">État de veille</string>
+    <string name="state_fetching_url">Récupération de l’url</string>
+    <string name="state_connecting">Connexion en cours</string>
+    <string name="state_downloading">Téléchargement en cours</string>
+    <string name="state_completed">Terminé</string>
+    <string name="state_paused_network_unavailable">Réseau indisponible</string>
+    <string name="state_paused_network_setup_failure">Échec de la configuration réseau</string>
+    <string name="state_paused_by_request">Mise en pause sur demande</string>
+    <string name="state_paused_wifi_unavailable">Wi-Fi indisponible</string>
+    <string name="state_paused_wifi_disabled">Wi-Fi désactivé</string>
+    <string name="state_paused_roaming">Mise en pause pour cause d\'itinérance</string>
+    <string name="state_paused_sdcard_unavailable">Carte SD indisponible</string>
+    <string name="state_failed_unlicensed">Sans licence</string>
+    <string name="state_failed_fetching_url">Échec de la récupération de l’url</string>
+    <string name="state_failed_sdcard_full">Carte SD pleine</string>
+    <string name="state_failed_cancelled">Téléchargement annulé</string>
+    <string name="state_failed">Échec du téléchargement</string>
+
+    <string name="kilobytes_per_second">%1$s KB/s</string>
+    <string name="time_remaining">Temps restant : %1$s</string>
+    <string name="time_remaining_notification">Restant %1$s</string>
+
+</resources>

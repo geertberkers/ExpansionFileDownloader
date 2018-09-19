@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <!-- When a download completes, a notification is displayed, and this
+        string is used to indicate that the download successfully completed.
+        Note that such a download could have been initiated by a variety of
+        applications, including (but not limited to) the browser, an email
+        application, a content marketplace. -->
+    <string name="notification_download_complete">Download compleet</string>
+
+    <!-- When a download completes, a notification is displayed, and this
+        string is used to indicate that the download failed.
+        Note that such a download could have been initiated by a variety of
+        applications, including (but not limited to) the browser, an email
+        application, a content marketplace. -->
+    <string name="notification_download_failed">Download unsuccessful</string>
+
+    <string name="state_unknown">Onbekend</string>
+    <string name="state_idle">Inactief</string>
+    <string name="state_fetching_url">Url ophalen</string>
+    <string name="state_connecting">Verbinden</string>
+    <string name="state_downloading">Downloaden</string>
+    <string name="state_completed">Compleet</string>
+    <string name="state_paused_network_unavailable">Netwerk onbeschikbaar</string>
+    <string name="state_paused_network_setup_failure">Netwerk instelling mislukt</string>
+    <string name="state_paused_by_request">Gepauseerd</string>
+    <string name="state_paused_wifi_unavailable">WiFi niet beschikbaar</string>
+    <string name="state_paused_wifi_disabled">WiFi uitgeschakeld</string>
+    <string name="state_paused_roaming">Gepauseerd door roaming</string>
+    <string name="state_paused_sdcard_unavailable">SD-card niet beschikbaar</string>
+    <string name="state_failed_unlicensed">Geen licentie</string>
+    <string name="state_failed_fetching_url">Ophalen url mislukt</string>
+    <string name="state_failed_sdcard_full">SD-Card vol</string>
+    <string name="state_failed_cancelled">Download geannuleerd</string>
+    <string name="state_failed">Download mislukt</string>
+
+    <string name="kilobytes_per_second">%1$s KB/s</string>
+    <string name="time_remaining">Benodigde tijd: %1$s</string>
+    <string name="time_remaining_notification">Resterend: %1$s </string>
+</resources>
