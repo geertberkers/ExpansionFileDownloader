@@ -1,7 +1,16 @@
 # Expansion Files Downloader
 
 Library with Google Packages to download Expansion Files.
+Add libaries as submodule in settings.gradle
+	include ':app',
+	include ':zip_file'
+	include ':market_licensing'
+	include ':downloader_library'
 
+	project(':zip_file').projectDir = new File('expasionfilesdownloader/zip_file')
+	project(':market_licensing').projectDir = new File('expasionfilesdownloader/market_licensing')
+	project(':downloader_library').projectDir = new File('expasionfilesdownloader/downloader_library')
+	
 Make use of the ExpansionFileDownloadActivity in your MainActity.
 
 	 override fun onResume() {
