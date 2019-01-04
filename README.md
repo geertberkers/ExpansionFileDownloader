@@ -1,7 +1,10 @@
 # Expansion Files Downloader
 
 Library with Google Packages to download Expansion Files.
+
 Add libaries as submodule in settings.gradle
+
+
 	include ':app',
 	include ':zip_file'
 	include ':market_licensing'
