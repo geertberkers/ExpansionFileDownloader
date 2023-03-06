@@ -17,8 +17,9 @@ package com.google.android.vending.licensing;
  * limitations under the License.
  */
 
-import org.apache.http.NameValuePair;
-import org.apache.http.client.utils.URLEncodedUtils;
+//import org.apache.http.NameValuePair;
+//import org.apache.http.client.utils.URLEncodedUtils;
+import com.google.android.vending.licensing.util.URIQueryDecoder;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -138,7 +139,8 @@ public class APKExpansionPolicy implements Policy {
 
         if (response == Policy.LICENSED) {
             // Update server policy data
-            Map<String, String> extras = decodeExtras(rawData.extra);
+            Map<String, String> extras = decodeExtras(rawData);
+//            Map<String, String> extras = decodeExtras(rawData.extra);
             mLastResponse = response;
             setValidityTimestamp(Long.toString(System.currentTimeMillis() + MILLIS_PER_MINUTE));
             Set<String> keys = extras.keySet();
@@ -375,23 +377,39 @@ public class APKExpansionPolicy implements Policy {
         return false;
     }
 
-    private Map<String, String> decodeExtras(String extras) {
+    private Map<String, String> decodeExtras(
+            com.google.android.vending.licensing.ResponseData rawData) {
         Map<String, String> results = new HashMap<String, String>();
+        if (rawData == null) {
+            return results;
+        }
+
         try {
-            URI rawExtras = new URI("?" + extras);
-            List<NameValuePair> extraList = URLEncodedUtils.parse(rawExtras, "UTF-8");
-            for (NameValuePair item : extraList) {
-                String name = item.getName();
-                int i = 0;
-                while (results.containsKey(name)) {
-                    name = item.getName() + ++i;
-                }
-                results.put(name, item.getValue());
-            }
+            URI rawExtras = new URI("?" + rawData.extra);
+            URIQueryDecoder.DecodeQuery(rawExtras, results);
         } catch (URISyntaxException e) {
             Log.w(TAG, "Invalid syntax error while decoding extras data from server.");
         }
         return results;
     }
+
+//    private Map<String, String> decodeExtras(String extras) {
+//        Map<String, String> results = new HashMap<String, String>();
+//        try {
+//            URI rawExtras = new URI("?" + extras);
+//            List<NameValuePair> extraList = URLEncodedUtils.parse(rawExtras, "UTF-8");
+//            for (NameValuePair item : extraList) {
+//                String name = item.getName();
+//                int i = 0;
+//                while (results.containsKey(name)) {
+//                    name = item.getName() + ++i;
+//                }
+//                results.put(name, item.getValue());
+//            }
+//        } catch (URISyntaxException e) {
+//            Log.w(TAG, "Invalid syntax error while decoding extras data from server.");
+//        }
+//        return results;
+//    }
 
 }
